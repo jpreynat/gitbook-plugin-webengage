@@ -1,0 +1,50 @@
+{
+  "name": "gitbook-plugin-webengage",
+  "description": "WebEngage Integration And Reader Analytics For GitBook",
+  "main": "index.js",
+  "version": "1.0.0",
+  "engines": {
+    "gitbook": "*"
+  },
+  "homepage": "https://github.com/webengage/gitbook-plugin-webengage",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webengage/gitbook-plugin-webengage.git"
+  },
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/webengage/gitbook-plugin-webengage/issues"
+  },
+  "gitbook": {
+    "properties": {
+      "licenseCode": {
+        "required": true,
+        "type": "string",
+        "title": "WebEngage License Code"
+      },
+      "version": {
+        "required": false,
+        "type": "number",
+        "default": 5,
+        "title": "WebEngage Widget Code Version",
+        "min": 3
+      },
+      "enableAnalytics": {
+        "required": false,
+        "type": "boolean",
+        "title": "Enable Page View Analytics",
+        "default": false
+      }
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webengage",
+    "gitbook",
+    "engagement",
+    "analytics"
+  ],
+  "author": "Nitin Bansal <nitin@webklipper.com> (http://webengage.com)"
+}
