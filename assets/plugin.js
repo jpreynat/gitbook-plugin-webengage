@@ -4,10 +4,20 @@ var trackPage = function(ev){
     if(typeof _config !== "undefined" && typeof _config.webengage !== "undefined") {
         if(typeof _config.webengage.enableAnalytics !== "undefined") {
             if(_config.webengage.enableAnalytics == true) {
-                webengage.track(ev, {
-                    'location': document.location.href + window.location.search,
-                    'timeStamp': new Date().getTime()
-                });
+                var checkWebengageExists = function(ev){
+                    if(webengage) {
+                        webengage.track(ev, {
+                            'location': document.location.href + window.location.search,
+                            'timeStamp': new Date().getTime()
+                        });
+                    } else {
+                        setTimeout(function(){
+                            checkWebengageExists(ev);
+                        }, 1000);
+                    }                    
+                };
+
+                checkWebengageExists(ev);
             }
         }
     }
