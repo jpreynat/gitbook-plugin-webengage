@@ -5,7 +5,7 @@ var trackPage = function(ev){
         if(typeof _config.webengage.enableAnalytics !== "undefined") {
             if(_config.webengage.enableAnalytics == true) {
                 webengage.track(ev, {
-                    'location': document.location.href,
+                    'location': document.location.href + window.location.search,
                     'timeStamp': new Date().getTime()
                 });
             }
